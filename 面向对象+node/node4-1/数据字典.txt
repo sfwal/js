@@ -1,0 +1,27 @@
+²©¿ÍÍøÕ¾
+
+1.banner
+	ID     
+	src       varchar    64
+                title      varchar    36
+	sub_title   varchar    20
+
+2.articel
+	ID
+	title    varchar   100
+	desc   varchar    200
+	src      varchar   64
+	author   varchar   16
+	time    int   
+	content   text
+	like    int
+
+
+3.user
+	username   varchar
+	password  
+	
+
+
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://baidu.com/index.php?jsoncallback"></script>
+</head>
+<body>
+    <script>
+        //创建httprequest对象
+        var request = new XMLHttpRequest();
+        request.open("GET","http://baidu.com/aa.php");
+        request.send();
+        request.onreadystatechange = function(){
+            if(request.readyState == 4){
+                if(request.status == 200){
+                    document.getElementById("aaa").innerHTML = request.responseText
+                }else{
+                    alert("发生错误" + request.status)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

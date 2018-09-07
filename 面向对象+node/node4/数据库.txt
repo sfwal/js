@@ -1,0 +1,69 @@
+数据库——存放数据
+
+sqlserver   、  mysql 、 oracle、access
+
+mysql   ——   
+
+免费  中小型企业的首选。
+
+oracle ——
+
+收费
+
+DBA
+
+Structured Query Language
+
+MD  文件型数据库
+
+
+增删改查
+
+增  
+
+
+服务端:
+	数据库
+客户端：
+	phpmyadmin  客户端
+
+组成部分
+
+库、表
+
+数据字典
+
+增   INSERT INTO `stu_info` (字段1，字段2...) VALUES （值1，值2...）
+
+INSERT INTO stu_info (name,tel)  VALUES （"杜文正",13712345678）
+
+删
+
+DELETE FROM stu_info WHERE 条件表达式
+
+DELETE FROM stu_info WHERE id=5
+
+改
+
+UPDATE  数据表  SET 字段1=值1,字段2=值2... WHERE 条件
+
+UPDATE stu_info SET name = "张泽小号" WHERE id=1
+
+查
+
+SELECT * FROM 数据表 WHERE 条件 
+
+SELECT name FROM stu_info WHERE id=1
+
+
+
+
+
+
+
+
+
+
+
+
+

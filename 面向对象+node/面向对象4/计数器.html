@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="1"/>
+    <input type="button" value="2"/>
+    <input type="button" value="3"/>
+    <input type="button" value="4"/>
+    <script>
+
+        var btn = document.getElementsByTagName("input");
+        for(var i=0;i<btn.length;i++){
+            // addClick(btn[i]);
+            btn[i].onclick = (function(count){
+                return function(){
+                    alert(count++);
+                }
+            })(0)
+            (function(obj){
+                var count = 0;
+                obj.onclick = function(){
+                    alert(count++)
+                }
+            })(btn[i]);
+
+        }
+
+    </script>
+</body>
+</html>

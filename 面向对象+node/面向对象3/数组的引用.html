@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr2 = [];
+        var arr1 = [1,2,3];
+        arr2 = arr1;
+        for(var i in arr1){
+            arr2[i] = arr1[i];
+        }
+        // for(var i=0; i<arr1.length;i++){
+        //     arr2[i] = arr1[i];
+        // }
+        arr2.push(4);
+        alert("数组1：" + arr1);  //?1234
+        alert("数组2：" + arr2);  //?1234
+        //
+    </script>
+</body>
+</html>

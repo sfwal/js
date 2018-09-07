@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="aaa"></div>
+    <script>
+        function app(){
+            this.name = "aaa";
+            // setTimeout(function(){
+            //     show()
+            // },100)
+            var that = this;
+            document.getElementById("aaa").onclick = function(){
+                alert(this);
+            }
+        }
+        function show(){
+            alert(this);
+        }
+        var p1 = new app();
+    </script>
+</body>
+</html>

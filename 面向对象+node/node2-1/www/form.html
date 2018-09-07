@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+        <input type="text" id="userName" />
+        <input type="text" id="pwd" />
+        <input type="submit" value="提交" id="btn" />
+
+        <script>
+            $("#btn").click(function(){
+                $.ajax({
+                    type:"POST",
+                    url:"/login",
+                    datatype:"json",
+                    data:{username:$("#userName").val(),pwd:$("#pwd").val()},
+                    success:function(msg){
+                        if(msg.ok){
+                            alert(msg.msg)
+                        }else{
+                            alert(msg.msg)
+                        }
+                    }
+                })
+            })
+        </script>
+</body>
+</html>

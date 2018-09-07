@@ -1,0 +1,243 @@
+/*重置基本样式*/
+* { margin: 0; padding: 0; }
+body { font: 14px/18px "Microsoft Yahei"}
+table {  border: none;  }
+
+.animated {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+.date-pick-input {
+    display: inline-block;
+    width: 225px;
+    line-height: 30px;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 20px;
+    position: absolute;
+    background: url("../img/icon_calendar.png") no-repeat right center;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.calendar {
+    position: absolute;
+    border: 1px solid #DAD3CB;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #FBF6F3;
+}
+
+.calendar .header {
+    border-radius: 3px;
+    padding: 7px;
+    background-color: #CA842E;
+    text-align: center;
+}
+
+.calendar .header .circle {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #FFCC00;
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar .header .circle .triangle-left {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-right-color: #FFF;
+}
+
+.calendar .header .circle .triangle-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: #FFF;
+}
+
+.calendar .header .circle .triangle-left.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-90%, -50%);
+}
+
+.calendar .header .circle .triangle-right.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+}
+
+.calendar .header .date-pick {
+    display: inline-block;
+}
+
+.calendar .header .date-pick .year-pick {
+    margin-left: 20px;
+}
+
+.calendar table td {
+    border: 1px solid #D3D3D3;
+    border-radius: 1px;
+    transition: all .2s linear;
+}
+
+.calendar table td.now-month {
+    cursor: pointer;
+}
+
+.calendar table td.pre-month, .calendar table td.next-month {
+    cursor: default;
+}
+
+.calendar table a {
+    display: block;
+    padding: .1em .4em;
+    text-align: right;
+    text-decoration: none;
+}
+
+.calendar .week {
+    color: #CC6666 !important;
+}
+
+.calendar .now-month .state-default {
+    color: #555555;
+    background-color: #F0E8DB;
+}
+
+.calendar .now-month .state-active {
+    background-color: #FFFFC0;
+}
+
+.calendar .now-month .state-choose {
+    background-color: #FFF;
+}
+
+.calendar .pre-month .state-default, .calendar .next-month .state-default {
+    color: #999;
+    background-color: #F7F5F3;
+}
+
+.calendar table td.now-month:hover {
+    border-color: #555;
+}
+
+.calendar table td.now-month:hover .state-default {
+    color: #222;
+    background-color: #FFCC99;
+}
+
+.calendar .footer {
+    color: #CA842E;
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+.calendar .footer .date-time {
+    display: inline-block;
+}
+
+.calendar .footer .date-time span, .calendar .footer .date-opr a {
+    display: inline-block;
+    line-height: 25px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+}
+
+.calendar .footer .time-label {
+
+    border-right: none;
+    margin-left: 2px;
+}
+.calendar .footer .time-dis {
+    margin-left: -1px;
+}
+
+.calendar .footer .date-opr {
+    display: inline-block;
+    float: right;
+}
+
+.calendar .footer .date-opr .date-today {
+    margin-right: -1px;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.calendar .footer .date-opr .date-today:hover {
+    background-color: #FFFFC0;
+}
+
+.calendar .footer .date-opr .date-clear{
+    margin-right: 2px;
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #bbb{
+            width:100px;height:100px;background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="bbb"></div>
+    <div id="bbb"></div>
+    <div id="bbb"></div>
+    <div id="bbb"></div>
+    <input type="buton" value="按钮" id="btn" />
+
+    <script src="jquery.js"></script>
+    <script>
+        // $(function(){
+        //     alert("aaa");
+        // })
+        // $(function(){
+        //     alert("bbb");
+        // })
+
+        alert(document.getElementById("bbb").style.height)
+        $("input").click(function(){
+            $(".bbb").toggle(function(){
+                alert("111")
+            },function(){
+                alert("222")
+            },function(){
+                alert("333")
+            });
+        })
+
+        //  1、函数  2、字符串  3、对象
+        //  字符串：id  class  tagName
+    </script>
+</body>
+</html>

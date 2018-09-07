@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function show(){
+            //程序内部会增加一个工作流
+            // var this = new Object();
+            alert(this);
+        }
+        show();      //object window 对象
+        new show();  //object Object
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #tab p{
+            display:none;
+        }
+        #tab a.on{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <div id="tab_hd">
+            <a class="on">新闻</a>
+            <a>军事</a>
+            <a>本地</a>
+        </div>
+        <div id="tab_bd">
+            <p style="display:block;">11111</p>
+            <p>22222</p>
+            <p>33333</p>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var oTab = document.getElementById("tab");
+            var aBtn = oTab.getElementsByTagName("a");
+            var aP = oTab.getElementsByTagName("p");
+
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index = i;
+                aBtn[i].onclick = function(){
+                    for(var j=0;j<aBtn.length;j++){
+                        aBtn[j].className = "";
+                        aP[j].style.display = "none";
+                    }
+                    this.className = "on";
+                    aP[this.index].style.display = "block";
+                }
+            }
+        }
+        var banner = new swiper("container")
+
+        var tab = new zztab("#tab");
+    </script>
+</body>
+</html>

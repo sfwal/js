@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="tab">
+        <div>
+            <a class="on">新闻</a>
+            <a>军事</a>
+            <a>本地</a>
+        </div>
+        <div>
+            <p style="display:block;">11111</p>
+            <p>22222</p>
+            <p>33333</p>
+        </div>
+    </div>
+
+    <div id="tab2">
+        <div>
+            <a class="on">新闻</a>
+            <a>军事</a>
+            <a>本地</a>
+        </div>
+        <div>
+            <p style="display:block;">11111</p>
+            <p>22222</p>
+            <p>33333</p>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var aaa = new zzTab("tab");
+            var bbb = new zzTab("tab2");
+        }
+
+        // var bbb = new zzTab("tab1");
+        // aaa.tab = function(){
+        // }
+        // bbb.tab = function(){
+        // }
+
+        function zzTab(id){
+            var oTab = document.getElementById(id);
+            this.aBtn = oTab.getElementsByTagName("a");
+            this.aP = oTab.getElementsByTagName("p");
+            var that = this;
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].index = i;
+                //this.aBtn[i].onclick = this.tab;
+                //this.aBtn[i]   a 标签
+                this.aBtn[i].onclick = function(){
+                    //this
+                    that.tab;
+                };
+            }
+        }
+        zzTab.prototype.tab = function(obj){
+            //执行某个方法
+            // alert(this.aBtn.length);
+            for(var i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].className = "";
+                this.aP[i].style.display = "none";
+            }
+            obj.className = "on";
+            this.aP[obj.index].style.display = "block";
+        }
+    </script>
+</body>
+</html>

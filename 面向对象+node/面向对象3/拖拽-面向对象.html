@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#div1 {width:100px; height:100px; background:red; position:absolute;}
+#div2 {width:100px; height:100px; background:green; position:absolute;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+    new creatDiv("div1");
+    new creatDiv("div2");
+}
+
+function creatDiv(id)
+{
+    this.oDiv=document.getElementById(id);
+    this.disX = 0;
+    this.disY = 0;
+    var that = this;
+    this.oDiv.onmousedown=function(){
+        that.down();
+    }
+};
+creatDiv.prototype.down = function(ev){
+    var oEvent=ev||event;
+    var that = this;
+    disX=oEvent.clientX-this.oDiv.offsetLeft;
+    disY=oEvent.clientY-this.oDiv.offsetTop;
+    document.onmousemove=function(){
+        that.move();
+    };
+    document.onmouseup=function(){
+        that.up();
+    };
+};
+creatDiv.prototype.move = function(ev){
+    var oEvent=ev||event;
+
+    this.oDiv.style.left=oEvent.clientX-disX+'px';
+    this.oDiv.style.top=oEvent.clientY-disY+'px';
+};
+creatDiv.prototype.up = function(ev){
+    document.onmousemove=null;
+    document.onmouseup=null;
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+</div>
+<div id="div2">
+</div>
+</body>
+</html>

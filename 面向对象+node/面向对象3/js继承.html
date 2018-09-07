@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        person.prototype.showName = function(){
+            alert(this.name);
+        }
+        person.prototype.showAge = function(){
+            alert(this.age);
+        }
+
+        function stu(name,age,class1){
+            person.call(this,name,age);
+            this.class = class1;
+        }
+        //stu.prototype = person.prototype;
+        for(var i in person.prototype){
+            stu.prototype[i] = person.prototype[i]
+        }
+        stu.prototype.showClass = function(){
+            alert(this.class);
+        }
+        var p1 = new person("zhangze","23","wangluo");
+        //stu1.showClass();
+        p1.showClass()
+    </script>
+</body>
+</html>

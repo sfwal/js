@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //函数、方法、事件处理函数、构造函数
+    //工厂模式
+    function creatStu(name,age){    //构造函数
+        //准备原料   新建一个空白的对象
+        //var obj = new Object();
+        //
+        //程序内部会增加一个工作流 , 创建一个空白对象
+        //var this = new Object();
+        //
+        //加工，对原料进行加工。
+        this.name = name;
+        this.age = age;
+        // this.showName = function(){
+        //     alert(this.name)
+        // }
+        // this.showAge = function(){
+        //     alert(this.age);
+        // }
+        //出厂
+        // return obj;
+        //
+        //程序内部会增加一个工作流 , 把这个对象抛出去
+        // return this;
+    }
+    creatStu.prototype.showName = function(){
+            alert(this.name)
+        }
+    creatStu.prototype.showAge = function(){
+            alert(this.age)
+        }
+    var stu1 = new creatStu("duwenzheng","22");
+    var stu2 = new creatStu("zhengze","22");
+
+        // stu1.showName();
+        // stu2.showAge();
+    alert(stu1.showName == stu2.showName);
+
+    </script>
+</body>
+</html>

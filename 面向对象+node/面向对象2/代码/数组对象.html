@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = new Array(23,12,35,24);
+        var arr2 = new Array(30,20,10);
+
+        Array.prototype.sum = function(){
+            var result = 0;
+            for(var i=0;i<this.length;i++){
+                result += this[i];
+            }
+            alert(result);
+        }
+
+        // arr1.sum = function(){
+        //     var result = 0;
+        //     for(var i=0;i<this.length;i++){
+        //         result += this[i];
+        //     }
+        //     alert(result);
+        // }
+        arr1.sum();
+        arr2.sum();
+    </script>
+</body>
+</html>

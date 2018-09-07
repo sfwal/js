@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "consolidate": "^0.15.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-static": "^1.2.5",
+    "mysql": "^2.15.0"
+  }
+}

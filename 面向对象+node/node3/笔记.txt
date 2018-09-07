@@ -1,0 +1,24 @@
+cookie   session
+
+http  无状态
+
+cookie  在浏览器端来存放一些数据，每次请求的时候都会把这个数据带过去。
+
+不安全。 非常小。 4K
+
+session  存放数据，保存在服务端。
+
+安全   无限
+
+cookie
+传值 ，，，读取 ,,,  删除
+
+zhangze
+s%3Azhangze.WI0RC4RQ6pacJJJQyfbUaShSSC0jmH27X6%2FmDmRDtuE
+
+2018-03-16T03:09:29.078Z
+
+/
+   /aaa
+      index.html
+   /bbb
