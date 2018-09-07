@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function loadImg(url){
+            return new Promise(function(resolve,reject){
+                var img = new Image();
+                img.src = url;
+                img.onload = function(){
+                    resolve(img)
+                };
+                img.onerror = function(){
+                    reject(new Error("无法加载图片" + url))
+                };
+            })
+        }
+        loadImg("1.jpg");
+
+
+        var aAjax = new Promise(function(resolve,reject){
+            $.ajax{
+                methed:"GET",
+                type:"JSON",
+                url:"http://jisukdcx.market.alicloudapi.com/express/query",
+                success:function(data){
+                    if(data.status == 0){
+                        resolve(data.result.list)
+                    }else{
+                        reject("daddds")
+                    }
+                }
+            }
+        })
+        var aAjax1 = new Promise(function(resolve,reject){
+            $.ajax{
+                methed:"GET",
+                type:"JSON",
+                url:"http://jisukdcx.market.alicloudapi.com/express/query",
+                success:function(data){
+                    if(data.status == 0){
+                        resolve(data.result.list)
+                    }else{
+                        reject("daddds")
+                    }
+                }
+            }
+        })
+        Promise.all([aAjax,aAjax1])
+    </script>
+
+    <img src="1.jpg" />
+</body>
+</html>

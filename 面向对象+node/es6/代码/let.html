@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="text"></div>
+    <button>A</button>
+    <button>B</button>
+    <button>C</button>
+    <button>D</button>
+    <script>
+        // var a = [1,2,3];
+        // function  aa{
+        //     console(a)
+        // }
+        // function warning(name,action){
+        //     var str = `${name}违反规定在厕所${action}`;
+        //     alert(str);
+        // }
+        // warning("杜文正","抽烟");
+
+        // const m = new Map();
+        // const hello = function() {alert("hello")};
+        // m.set(hello, 'Hello ES6!') // 键是函数
+        // alert(m.get(hello))  // Hello ES6!
+
+        // var m = new Map().set("name","zhangze").set("name1","tangfeng")
+        // var obj = Object.create(null);
+        // for(let [key,val] of m){
+        //     obj[key] = val;
+        // }
+        //
+        //map转json
+        let map1 = new Map().set("yes",true).set("no",false);
+        function mapToJson(strMap){
+            let obj = Object.create(null);
+            for(let [key,val] of strMap){
+                obj[key] = val;
+            }
+            return JSON.stringify(obj)
+        }
+        console.log(typeof mapToJson(map1))
+        // let myMap = new Map().set("yes",true).set("no",false);
+        // console.log(myMap);
+        // console.log([...myMap])
+
+        // var arr = [[a,7],[3,4]];
+        // new Map(arr);
+        //
+
+        //console.log(typeof objJson);
+        //
+        let myMap = new Map().set(true,7).set({foo:3},['abc']);
+        function mapToArrayJson(map){
+            return JSON.stringify([...map]);
+        }
+        console.log(mapToArrayJson(myMap));
+
+        // var obj = {
+        //     name:"zhangze",
+        //     name1:"tangfeng"
+        // }
+        // let m = new Map();
+        // for(let k of Object.keys(obj)){
+        //     m.set(k,obj[k]);
+        // }
+        function mapToObj(map){
+            let obj = Object.create(null);
+            for(let [key,val] of map){
+                obj[key] = val;
+            }
+            return obj;
+        }
+        let strMap = new Map().set("name","zhangze").set("name1","tangfeng");
+        // console.log(mapToObj(strMap));
+    </script>
+</body>
+</html>

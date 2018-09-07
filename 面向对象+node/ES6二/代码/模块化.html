@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- aaa.js -->
+    <script>
+        var name = "123";
+        function http(url,data,mothed){
+            //ajax
+            return mydata;
+        }
+        function aaa(){
+            //dad
+        }
+        export {name,http,aaa}
+
+    </script>
+
+    <!-- index.js -->
+    <script>
+        import {http,aaa} from 'aaa.js'
+
+        http()
+    </script>
+
+    <script>
+        function http(url,data,mothed){
+            //ajax
+            return mydata;
+        }
+
+        http()
+    </script>
+</body>
+</html>

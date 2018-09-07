@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [34,12,23,45,56];
+        var mySort = arr => {
+            for(var j=0;j<arr.length-1;j++){
+                var flag = true;
+                for(var i=0;i<arr.length-1-j;i++){
+                    if(arr[i] > arr[i+1]){
+                        var temp = arr[i];
+                        arr[i] = arr[i+1];
+                        arr[i+1] = temp;
+                        flag = false;
+                    }
+                }
+                if(flag){
+                    break;
+                }
+            }
+        }
+        mySort(arr)
+        console.log(arr);
+        // function(arr){
+
+        // }
+    </script>
+</body>
+</html>

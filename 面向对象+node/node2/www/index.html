@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        用户名：<input type="text" id="userName" /><br/>
+        密码：<input type="password" id="pwd" /><br />
+        <input type="button" value="注册" id="reg" />
+        <input type="button" value="登录" id="login" />
+    </div>
+    <script>
+        $(function(){
+            $("#reg").click(function(){
+                $.ajax({
+                    url: '/user',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {act: 'reg',userName:$('#userName').val(),pwd:$("#pwd").val()},
+                    success:function(data){
+                        var json = eval(data)
+                        if(json.ok == true){
+                            alert("注册成功");
+                        }else{
+                            alert("注册失败:"+json.msg);
+                        }
+                    }
+                })
+            })
+
+            $("#login").click(function(){
+                $.ajax({
+                    url: '/user',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {act: 'login',userName:$('#userName').val(),pwd:$("#pwd").val()},
+                    success:function(data){
+                        var json = JSON.parse(data)
+                        if(json.ok == true){
+                            alert("登录成功");
+                        }else{
+                            alert("登录失败:"+json.msg);
+                        }
+                    }
+                })
+            })
+
+        })
+    </script>
+</body>
+</html>
